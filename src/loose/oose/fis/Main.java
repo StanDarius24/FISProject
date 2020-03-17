@@ -2,6 +2,7 @@ package loose.oose.fis;
 
 import loose.oose.fis.documents.Document;
 import loose.oose.fis.documents.JSON;
+import loose.oose.fis.documents.RunLengthEncoding;
 import loose.oose.fis.documents.XML;
 import loose.oose.fis.processors.Procesor;
 import loose.oose.fis.processors.ProcesorCautare;
@@ -20,12 +21,17 @@ public class Main {
         xmlList[3] = "<tag2>";
         xmlList[4] = "text2";
         xmlList[5] = "</tag2>";
-
+        String [] rle = new String[3];
+        rle[0]="buna";
+        rle[1]="cursuri online";
+        rle[2]="fis";
         Document xml = new XML(xmlList);
-
+        Document fs1 = new RunLengthEncoding(rle);
         ArrayList<Document> documente = new ArrayList<>();
         documente.add(xml);
+        documente.add(fs1);
 
+        System.out.println(fs1.analizeaza()[0]);
         Procesor c1 = new ProcesorCautare("text1");
         Procesor c2 = new ProcesorCautare("text3");
         Procesor c3 = new ProcesorCautare("text2");
