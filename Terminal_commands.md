@@ -7,3 +7,8 @@ $ git push -u origin master
 $ git branch branch1  
 $ git checkout branch1  
 $ git push -u origin branch1  
+//am creat un alt branch in Intellij branch2  
+$ git checkout branch2  
+$ git merge branch1  
+$ git checkout master  
+$ git merge branch2  
